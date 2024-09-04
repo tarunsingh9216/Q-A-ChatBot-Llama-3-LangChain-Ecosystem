@@ -4,7 +4,7 @@ from langchain.prompts import ChatPromptTemplate
 from langserve import add_routes
 import uvicorn
 import os
-from langchain_community.llms import ollama
+from langchain_community.llms import Ollama
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -20,7 +20,7 @@ app = FastAPI(
 
 ## LLM Model
 
-llm = ollama(model="llama3")
+llm = Ollama(model="Llama3.1")
 
 prompt=ChatPromptTemplate.from_template("Write ma an essay about {topic} with 20 words")
 
